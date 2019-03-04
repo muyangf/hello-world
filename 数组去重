@@ -1,0 +1,36 @@
+public class TestDemo {
+    public static void main(String[] args) {
+        //10个整数{9,10,6,6,1,9,3,5,6,4}，
+        // 保存到数组中。 1.	去除数组中重复的内容，只保留唯一的元素。
+        // 2.以下列格式打印数组： [9,10,6,1,3,5,4]
+        int[] nums = {9,10,6,6,1,1,9,3,3,5,6,0,6,4,0};
+
+        int[] newNums = new int[10];
+        int count = 0; //记住新数组中有效数据的个数
+
+        for (int i = 0; i < nums.length; i++) {
+            //取出原数组
+            int num = nums[i];
+            boolean flag = false;
+            //判断 num 在新数组中有没有
+            for (int j = 0; j < count; j++) {
+                if(num == newNums[j]){
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag == false) {
+                //保存到新数组中
+                newNums[count] = num;
+                count++;
+            }
+        }
+        //最后遍历newNums
+        for (int i = 0; i < count; i++) {
+            System.out.println(newNums[i]);
+        }
+
+
+
+    }
+}
